@@ -1,13 +1,13 @@
 #!/bin/bash
-# Instalação do OpenJDK 11 + Jenkins
-# Por Alan Queiroz - alan.queiroz@cronapp.io
+# Script de instalação do OpenJDK 11 + Jenkins
+# Por Alan Queiroz - alanqueiroz@outlook.com
 # Em 20/09/2020
 
 # Atualizando lista de repositórios 
 sudo apt update -y
 
 # Instalando pacotes essenciais
-apt-get install wget unzip git -y
+apt-get install wget unzip git net-tools -y
 
 # Instalando o OpenJDK-11
 apt-get install openjdk-11-jdk -y
