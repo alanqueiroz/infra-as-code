@@ -85,12 +85,12 @@ sonar.log.maxFiles=7
 # CONFIGURAÇÕES GLOBAL #
 sonar.security.realm=LDAP
 ldap.url=ldap://$IP_LDAP:389
-ldap.bindDn=svc.sonarqube@techne.com.br
+ldap.bindDn=svc.sonarqube@techroute.com.br
 ldap.bindPassword=$SENHA_LDAP
 ldap.authentication=simple
 
 # CONFIGURAÇÕES DE USUÁRIOS #
-ldap.user.baseDn=OU=USERS_SSA,OU=USERS_TECHNE,OU=USERS,OU=TECHNE,DC=techne,DC=com,DC=br
+ldap.user.baseDn=OU=USERS_SSA,OU=USERS_TECHROUTE,OU=USERS,OU=TECHROUTE,DC=techroute,DC=com,DC=br
 ldap.user.request=(&(objectClass=user)(sAMAccountName={login}))
 
 ### FIM DAS CONFIGURAÇÕES DE LDAP ###
