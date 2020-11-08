@@ -136,7 +136,11 @@ apt-get install nginx -y
 systemctl enable nginx
 systemctl start nginx
 
-echo "Informe a URL do sonarqube [Ex: sonarqube.cronapp.io]"
+## Porta de execução do sonarqube
+echo "Informe o número da porta que o sonar irá rodar [Exemplo: 9000]"
+read PORTA_SONAR
+
+echo "Informe a URL do sonarqube [Ex: sonarqube.techroute.com.br]"
 read URL_SONARQUBE
 
 cat > /etc/nginx/sites-enabled/sonarqube.conf << EOF
@@ -148,7 +152,7 @@ server {
     error_log  /var/log/nginx/$URL_SONARQUBE.error.log;
 	
 	location / {
-	    proxy_pass http://localhost:9002;
+	    proxy_pass http://localhost:$PORTA_SONAR;
 	}
 }
 EOF
