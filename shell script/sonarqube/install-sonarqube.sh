@@ -85,12 +85,12 @@ sonar.log.maxFiles=7
 # CONFIGURAÇÕES GLOBAL #
 sonar.security.realm=LDAP
 ldap.url=ldap://$IP_LDAP:389
-ldap.bindDn=svc.sonarqube@techne.com.br
+ldap.bindDn=svc.sonarqube@techroute.com.br
 ldap.bindPassword=$SENHA_LDAP
 ldap.authentication=simple
 
 # CONFIGURAÇÕES DE USUÁRIOS #
-ldap.user.baseDn=OU=USERS_SSA,OU=USERS_TECHNE,OU=USERS,OU=TECHNE,DC=techne,DC=com,DC=br
+ldap.user.baseDn=OU=USERS_SSA,OU=USERS_TECHROUTE,OU=USERS,OU=TECHROUTE,DC=techroute,DC=com,DC=br
 ldap.user.request=(&(objectClass=user)(sAMAccountName={login}))
 
 ### FIM DAS CONFIGURAÇÕES DE LDAP ###
@@ -136,7 +136,11 @@ apt-get install nginx -y
 systemctl enable nginx
 systemctl start nginx
 
-echo "Informe a URL do sonarqube [Ex: sonarqube.cronapp.io]"
+## Porta de execução do sonarqube
+echo "Informe o número da porta que o sonar irá rodar [Exemplo: 9000]"
+read PORTA_SONAR
+
+echo "Informe a URL do sonarqube [Ex: sonarqube.techroute.com.br]"
 read URL_SONARQUBE
 
 cat > /etc/nginx/sites-enabled/sonarqube.conf << EOF
@@ -148,7 +152,7 @@ server {
     error_log  /var/log/nginx/$URL_SONARQUBE.error.log;
 	
 	location / {
-	    proxy_pass http://localhost:9002;
+	    proxy_pass http://localhost:$PORTA_SONAR;
 	}
 }
 EOF
