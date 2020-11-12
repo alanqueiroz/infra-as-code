@@ -1,8 +1,8 @@
-﻿Import-Module ActiveDirectory 
+﻿Import-Module ActiveDirectory
 
 (Get-Content C:\scripts\AD\Lista.csv).replace(';' ,',') | Set-Content C:\scripts\AD\Lista.csv
 Import-Csv "C:\scripts\AD\Lista.csv" | ForEach-Object {
-$upn = $_.Login + “@techne.com.br”
+$upn = $_.Login + “@techroute.com.br”
 $uname = $_.PrimeiroNome + " " + $_.UltimoNome
 
 
