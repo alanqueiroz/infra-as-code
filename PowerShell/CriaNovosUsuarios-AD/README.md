@@ -2,7 +2,7 @@
 1 - Crie a estrutura de diretórios a seguir:
 c:\scripts\AD dentro da unidade c: do servidor do AD
 <br>
-2 - Edite o arquivos Lista.xlsx, populando ele de acordo com os seus usuários a serem criados
+2 - Edite o arquivo Lista.xlsx, populando ele de acordo com os seus usuários a serem criados
 <br>
 3 - Salve esse arquivo como Lista.csv
 <br>
