@@ -13,4 +13,5 @@ c:\scripts\AD dentro da unidade c: do servidor do AD
 Fim :) , criado os seus quinhentos e tantos usuários com um duplo clique.
 
 Nota¹: Se for utilizado outro caminho para o csv e o script, deverá o caminho no script.
+<br>
 Nota²: Você pode também criar um agendamento no agendador do windows, para que a execução seja automática, vai da sua necessidade e criatividade.
