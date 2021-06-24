@@ -9,7 +9,7 @@ def on_intent(intent_request, session):
     intent = intent_request['intent']
     intent_name = intent_request['intent']['name']
     region = 'us-east-1'
-    instances = ['i-0053a14a7215550a4']
+    instances = ['ID-DA-INSTANCIA']
     session_attributes = {}
     ec2 = boto3.client('ec2', region_name=region)
     session_attributes = {}
